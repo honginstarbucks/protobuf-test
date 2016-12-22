@@ -1,0 +1,29 @@
+package sbux.protobuff.test;
+
+message Person {
+    optional string name = 1;
+    optional int32 age = 2;
+
+    repeated Address addresses = 3;
+    repeated PhoneNumber phone = 4;
+
+    enum PhoneType {
+        MOBILE = 0;
+        HOME = 1;
+        WORK = 2;
+    }
+
+    message PhoneNumber {
+        required string number = 1;
+        optional PhoneType type = 2 [default = HOME];
+    }
+
+    message Address {
+        required string country = 1;
+        optional string name = 2;
+        optional string city = 3;
+        optional string state = 4;
+        optional string zipcode = 5;
+    }
+}
+

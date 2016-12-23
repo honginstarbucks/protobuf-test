@@ -25,4 +25,10 @@ object app extends App {
     )
 
   print(p1)
+
+  val p = new Producer()
+  p.send(p1, "test")
+
+  val c = new KafkaConsumer
+  c.consume()
 }
